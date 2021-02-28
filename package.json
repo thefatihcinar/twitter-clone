@@ -4,7 +4,9 @@
   "description": "Twitter Clone Project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node app.js",
+    "startServer" : "node app.js"
   },
   "author": "Fatih Çınar",
   "license": "ISC"
