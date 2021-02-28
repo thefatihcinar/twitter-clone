@@ -5,9 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node app.js",
-    "startServer" : "node app.js"
+    "start": "node app.js",
+    "startServer": "node app.js"
   },
   "author": "Fatih Çınar",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
