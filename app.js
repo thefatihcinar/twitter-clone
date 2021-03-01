@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 // create express instance
 
+const middleware = require("./middleware");
+
 const PORT = 3003;
 
 app.set("view engine", "pug");
@@ -14,7 +16,7 @@ const server = app.listen(PORT, () => {
     console.log("Server is working on PORT " + PORT);
 });
 
-app.get("/", (request, response, next) => {
+app.get("/", middleware.requireLogin, (request, response, next) => {
 
     var payload = {
         pageTitle: "Twitter Clone",
@@ -26,3 +28,4 @@ app.get("/", (request, response, next) => {
     //response.status(OKAY).send("Server is ON! :)");
     response.status(OKAY).render("home", payload);
 });
+
