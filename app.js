@@ -12,6 +12,13 @@ app.set("view engine", "pug");
 app.set("views", "views");
 // means that our pug views is located in views folder
 
+// ROUTES
+// For different pages (routes), i will use these routers
+const loginRoute = require('./routes/loginRoutes'); // get the router
+
+// Use this router
+app.use("/login", loginRoute);
+
 const server = app.listen(PORT, () => {
     console.log("Server is working on PORT " + PORT);
 });
