@@ -18,10 +18,12 @@ app.set("views", "views");
 // We call this router because it handles only this route
 router.get("/", (request, response, next) => {
 
-  
+    var payload = {
+        pageTitle : "Login"
+    };
     
     const OKAY = 200;
-    response.status(OKAY).render("login");
+    response.status(OKAY).render("login", payload);
 });
 
 // Export this router object
