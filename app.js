@@ -1,5 +1,7 @@
 const express = require("express");
 
+const path = require("path");
+
 const app = express();
 // create express instance
 
@@ -11,6 +13,8 @@ app.set("view engine", "pug");
 // say that we want to use pug template engine
 app.set("views", "views");
 // means that our pug views is located in views folder
+
+app.use(express.static(path.join(__dirname, "public")));
 
 // ROUTES
 // For different pages (routes), i will use these routers
