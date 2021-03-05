@@ -20,9 +20,12 @@ app.use(express.static(path.join(__dirname, "public")));
 // ROUTES
 // For different pages (routes), i will use these routers
 const loginRoute = require('./routes/loginRoutes'); // get the router
+const registerRoute = require('./routes/registerRoutes'); // get the router
 
 // Use this router
 app.use("/login", loginRoute);
+app.use("/register", registerRoute);
+
 
 const server = app.listen(PORT, () => {
     console.log("Server is working on PORT " + PORT);
