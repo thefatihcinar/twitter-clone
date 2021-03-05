@@ -14,6 +14,7 @@ app.set("view engine", "pug");
 app.set("views", "views");
 // means that our pug views is located in views folder
 
+// Serve public folder as static
 app.use(express.static(path.join(__dirname, "public")));
 
 // ROUTES
