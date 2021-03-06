@@ -22,9 +22,17 @@ app.use(express.static(path.join(__dirname, "public")));
 const loginRoute = require('./routes/loginRoutes'); // get the router
 const registerRoute = require('./routes/registerRoutes'); // get the router
 
+// Use Body Parser
+// to parse elements in Request Form
+const bodyParser = require("body-parser");
+// relate body parser with express server (router)
+app.use(bodyParser.urlencoded({extended: false}));
+
+
 // Use this router
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
+
 
 
 const server = app.listen(PORT, () => {
