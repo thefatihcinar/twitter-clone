@@ -4,12 +4,31 @@ block content
     .loginContainer 
         h1 Register 
 
-        form(method="post")
+        form#registerForm(method="post", onsubmit= "event.preventDefault();validatePasswords();")
             input(type="text", name="firstName", placeHolder="First Name", required = "")
             input(type="text", name="lastName", placeHolder="Last Name", required = "")
             input(type="email", name="email", placeHolder="Email", required = "")
-            input(type="password", name="password", placeHolder="Password", required = "")
-            input(type="password", name="passwordConfirm", placeHolder="Confirm Password", required = "")
+            input#password(type="password", name="password", placeHolder="Password", required = "")
+            input#passwordConfirm(type="password", name="passwordConfirm", placeHolder="Confirm Password", required = "")
             input(type="submit", value="Register")
         
         a(href = "/login") Already have an account? Login here.
+    
+    script.
+        var passwordField = document.getElementById("password");
+        var passwordConfirmField = document.getElementById("passwordConfirm");
+
+        var form = document.getElementById("registerForm");
+
+        function validatePasswords(){
+            // This function will control whether two passwords match or not
+            if(passwordField.value == passwordConfirmField.value){
+                // if passwords match
+                form.submit();
+            }
+            else{
+                // if not
+                alert("Passwords DO NOT MATCH!");
+            }
+        }
+
