@@ -25,7 +25,6 @@ app.set("views", "views"); // sources of pug files (views)
 // redirected by server
 // Server -> Router
 router.get("/", (request, response, next) => {
-
     const OKAY = 200;
     response.status(OKAY).render("register"); // render register view
 
@@ -33,6 +32,18 @@ router.get("/", (request, response, next) => {
 
 router.post("/", (request, response, next) => {
     // This function will evaluate post requests to the server or router
+
+
+    let firstName = request.body.firstName.trim();
+    let lastName = request.body.lastName.trim();
+    let email = request.body.email.trim();
+    let password = request.body.password;
+
+    console.log("firstName: " + firstName);
+    console.log("lastName: " + lastName);
+    console.log("email: " + email);
+    console.log("password: " + password);
+
 
     console.log(request.body);
 
