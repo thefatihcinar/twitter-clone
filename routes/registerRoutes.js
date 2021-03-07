@@ -32,25 +32,35 @@ router.get("/", (request, response, next) => {
 
 router.post("/", (request, response, next) => {
     // This function will evaluate post requests to the server or router
-
+    const OKAY = 200;
 
     let name = request.body.name.trim();
     let username = request.body.username.trim();
     let email = request.body.email.trim();
     let password = request.body.password;
 
+    // Server-side validation
+    // Make sure that none of them is empty
+    // EMPTYNESS VALIDATION
+
+    if(name && username && email && password){
+        // there is no problem
+        response.send("everything is cool for now");
+    }
+    else{
+        // We do not want the user to lose information 
+        // in register form
+        // because we will ask the user to fill again
+        // Keep all the values in the form 
+        // i.e. SEND ALL DATA BACK TO FRONT-END
+        let payload = request.body;
+        payload.errorMessage = "Make sure each field has a valid value!"; 
+        // render an error message
+        response.status(OKAY).render("register", payload);
+    }
+
+
     
-    console.log("Name: " + name);
-    console.log("username: " + username);
-    console.log("email: " + email);
-    console.log("password: " + password);
-
-
-
-    console.log(request.body);
-
-    const OKAY = 200;
-    response.send(request.body);
 });
 
 module.exports = router; // export this router object
