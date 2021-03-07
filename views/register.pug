@@ -6,7 +6,7 @@ block content
 
         form#registerForm(method="post", onsubmit= "event.preventDefault();validatePasswords();")
             input(type="text", name="name", placeHolder="Name", required = "")
-            input(type="text", name="lastName", placeHolder="Last Name", required = "")
+            input(type="text", name="username", placeHolder="Username", required = "")
             input(type="email", name="email", placeHolder="Email", required = "")
             input#password(type="password", name="password", placeHolder="Password", required = "")
             input#passwordConfirm(type="password", name="passwordConfirm", placeHolder="Confirm Password", required = "")

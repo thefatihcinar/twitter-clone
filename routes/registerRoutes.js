@@ -35,18 +35,18 @@ router.post("/", (request, response, next) => {
 
 
     let name = request.body.name.trim();
-    let lastName = request.body.lastName.trim();
+    let username = request.body.username.trim();
     let email = request.body.email.trim();
     let password = request.body.password;
 
-    /*
-    console.log("firstName: " + firstName);
-    console.log("lastName: " + lastName);
+    
+    console.log("Name: " + name);
+    console.log("username: " + username);
     console.log("email: " + email);
     console.log("password: " + password);
 
-    */
-   
+
+
     console.log(request.body);
 
     const OKAY = 200;
