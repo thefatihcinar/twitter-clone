@@ -5,7 +5,7 @@ block content
         h1 Register 
 
         form#registerForm(method="post", onsubmit= "event.preventDefault();validatePasswords();")
-            input(type="text", name="firstName", placeHolder="First Name", required = "")
+            input(type="text", name="name", placeHolder="Name", required = "")
             input(type="text", name="lastName", placeHolder="Last Name", required = "")
             input(type="email", name="email", placeHolder="Email", required = "")
             input#password(type="password", name="password", placeHolder="Password", required = "")

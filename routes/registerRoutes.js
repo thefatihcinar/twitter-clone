@@ -34,17 +34,19 @@ router.post("/", (request, response, next) => {
     // This function will evaluate post requests to the server or router
 
 
-    let firstName = request.body.firstName.trim();
+    let name = request.body.name.trim();
     let lastName = request.body.lastName.trim();
     let email = request.body.email.trim();
     let password = request.body.password;
 
+    /*
     console.log("firstName: " + firstName);
     console.log("lastName: " + lastName);
     console.log("email: " + email);
     console.log("password: " + password);
 
-
+    */
+   
     console.log(request.body);
 
     const OKAY = 200;
