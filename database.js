@@ -2,6 +2,13 @@
 // Database Logic and Server Logic Must Be Different
 
 const fs = require("fs");
+/*
+The require("mongoose") call below return a SINGLETON object
+It means that the first time you call require("mangoose")
+it is creating an instance of The Mangoose Class and returning it.
+On subsequent calls, it will return THE SAME INSTANCE that was created
+and returned to you the first time 
+*/
 const mongoose = require("mongoose"); //mongoose works on top of mongodb
 
 // Configurations
