@@ -15,6 +15,7 @@ const mongoose = require("mongoose"); //mongoose works on top of mongodb
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
 mongoose.set("useFindAndModify", false);
+mongoose.set('useCreateIndex', true);
 
 
 const adminPassword = fs.readFileSync("./PrivateData/mondodb_admin_key.txt").toString();
