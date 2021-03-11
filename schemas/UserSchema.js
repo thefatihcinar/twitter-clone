@@ -15,7 +15,7 @@ const UserSchema = new Schema({
     email: {type: String, required: true, trim:true, unique: true},
     password:{type:String, required: true},
     profilePicture:{type:String, default: "/images/defaultProfilePicture.png"}
-}); 
+}, { timestamps: true }); 
 
 var User = mongoose.model("User", UserSchema);
 // Match the User Schema with database
