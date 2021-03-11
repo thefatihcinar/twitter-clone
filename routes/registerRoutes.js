@@ -49,6 +49,8 @@ router.post("/", async (request, response, next) => {
     if(name && username && email && password){
         // there is no problem
 
+        var payload = request.body;
+
         // Gotta CHECK WHETHER THIS USERNAME OR EMAIL ALREADY EXISTS
         let user = await User.findOne({
             $or: [
@@ -78,18 +80,22 @@ router.post("/", async (request, response, next) => {
                 console.log(user);
 
                 response.send("registeration is successfull");
-            } );
+            })
+            .catch((error) => {
+                console.log(" !! ERROR WHILE INSERTING NEW USER");
+                console.log(error);
+            });
         }
         else{
             // there is a user that  has this username or this email
             // check which one is it
             if( email == user.email){
                 // emails match
-                payload.errorMessage("Email already in use!");
+                payload.errorMessage = "Email already in use!";
             }
             else if ( username == user.username){
                 // usernames match
-                payload.errorMessage("Username already in use!");
+                payload.errorMessage = "Username already in use!";
             }
 
             response.status(200).render("register", payload);
