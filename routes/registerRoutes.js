@@ -67,6 +67,18 @@ router.post("/", async (request, response, next) => {
         if(user == null){
             // there is no user with this username and email
             // INSERT THE USER TO THE DATABASE
+
+            // User infomation is stored in REQUEST.BODY
+            let userData = request.body;
+
+            User.create(userData)
+            .then((user) => {
+                // after adding new user
+                console.log("!! -- NEW USER REGISTERATED--");
+                console.log(user);
+
+                response.send("registeration is successfull");
+            } );
         }
         else{
             // there is a user that  has this username or this email
@@ -85,7 +97,7 @@ router.post("/", async (request, response, next) => {
         
       
 
-        response.send("everything is cool for now");
+        //response.send("everything is cool for now");
     }
     else{
         // We do not want the user to lose information 
