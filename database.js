@@ -19,8 +19,8 @@ mongoose.set('useCreateIndex', true);
 
 
 const adminPassword = fs.readFileSync("./PrivateData/mondodb_admin_key.txt").toString();
-
-const connectionString = "mongodb+srv://admin:" + adminPassword +"@twittercluster.l5tqo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const databaseName = "TwitterDB";
+const connectionString = "mongodb+srv://admin:" + adminPassword +"@twittercluster.l5tqo.mongodb.net/" + databaseName + "?retryWrites=true&w=majority";
 
 
 class Database

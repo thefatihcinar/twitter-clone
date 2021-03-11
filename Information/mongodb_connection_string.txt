@@ -1,1 +1,1 @@
-mongodb+srv://admin:<password>@twittercluster.l5tqo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongodb+srv://admin:<password>@twittercluster.l5tqo.mongodb.net/TwitterDB?retryWrites=true&w=majority
