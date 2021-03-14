@@ -1,6 +1,8 @@
 
 const express = require("express");
 
+const bcrypt = require("bcrypt"); // for hashing the password
+
 // make an instance of express
 const app = express();
 
@@ -72,6 +74,12 @@ router.post("/", async (request, response, next) => {
 
             // User infomation is stored in REQUEST.BODY
             let userData = request.body;
+
+            // Hash the password before sending to the database
+            // i.e. Encryption
+
+            const saltRounds = 11; // how many times hashing will occur 2^11
+            userData.password = await bcrypt.hash(password, saltRounds);
 
             User.create(userData)
             .then((user) => {
