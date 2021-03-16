@@ -9,6 +9,10 @@ const middleware = require("./middleware");
 
 const PORT = 3003;
 
+const mongoose = require("./database");
+
+const session = require("express-session");
+
 app.set("view engine", "pug");
 // say that we want to use pug template engine
 app.set("views", "views");
@@ -16,6 +20,15 @@ app.set("views", "views");
 
 // Serve public folder as static
 app.use(express.static(path.join(__dirname, "public")));
+
+// Setting Up Session
+// First need Secret Key 
+const SECRET_SENTENCE = "PROVE THEM WRONG";
+app.use(session({ 
+    secret: SECRET_SENTENCE,
+    resave: true,
+    saveUninitialized: false
+}));
 
 // ROUTES
 // For different pages (routes), i will use these routers
