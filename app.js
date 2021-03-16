@@ -57,7 +57,8 @@ app.get("/", middleware.requireLogin, (request, response, next) => {
     var payload = {
         pageTitle: "Twitter Clone",
         pageHeading : "Welcome to Twitter, a Connected World",
-        pageDescription : "This is where the World talks to each other."
+        pageDescription : "This is where the World talks to each other.",
+        userLoggedIn: request.session.user
     };
     
     const OKAY = 200;
