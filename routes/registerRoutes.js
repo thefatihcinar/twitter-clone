@@ -87,7 +87,12 @@ router.post("/", async (request, response, next) => {
                 console.log("!! -- NEW USER REGISTERATED--");
                 console.log(user);
 
-                response.send("registeration is successfull");
+                // ADD THIS USER TO SESSION
+                request.session.user = user; // REMEMBER HE/SHE HAS LOGGED IN
+
+                // NOW, since the user is registered/ logged in
+                // REDIRECT TO HOME PAGE
+                return response.redirect("/"); 
             })
             .catch((error) => {
                 console.log(" !! ERROR WHILE INSERTING NEW USER");
