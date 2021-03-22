@@ -1,5 +1,19 @@
 nav {
-    background-color: indigo;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    height: 90%;
+}
+
+
+nav a{
+    padding:10px;
+    font-size:29px;
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .mainSectionContainer {
