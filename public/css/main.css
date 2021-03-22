@@ -1,3 +1,18 @@
+:root{
+    --twitterBlue: #1FA2F1;
+    --buttonHoverBackground: #D4EDFF;
+
+}
+
+a{
+    color:inherit;
+}
+
+a:hover{
+    color: var(--twitterBlue);
+    text-decoration:none;
+}
+
 nav {
     margin-top: 70px;
     display:flex;
@@ -8,6 +23,7 @@ nav {
 
 
 nav a{
+    color: #7c848c;
     padding:10px;
     font-size:29px;
     width:55px;
@@ -15,6 +31,16 @@ nav a{
     display:flex;
     align-items:center;
     justify-content: center;
+}
+
+nav a.twitterBird{
+    color: var(--twitterBlue)
+}
+
+nav a:hover{
+    background-color: var(--buttonHoverBackground);
+    color: var(--twitterBlue);
+    border-radius: 50%;
 }
 
 .mainSectionContainer {
