@@ -11,7 +11,20 @@ html(lang="en")
         .wrapper 
             .row 
                 nav.col-2
-                    span NAVBAR
+                    a(href = "/")
+                        i.fab.fa-twitter
+                    a(href = "/")
+                        i.fas.fa-home
+                    a(href = "/search")
+                        i.fas.fa-search
+                    a(href = "/notifications")
+                        i.fas.fa-bell
+                    a(href = "/messages")
+                        i.fas.fa-envelope
+                    a(href = "/profile")
+                        i.fas.fa-user
+                    a(href = "/logout")
+                        i.fas.fa-sign-out-alt
                 .mainSectionContainer.col-10.col-md-8.col-lg-7
                     block content
                 .d-none.d-md-block.col-2.col-lg-3
