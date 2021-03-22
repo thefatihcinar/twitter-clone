@@ -1,6 +1,7 @@
 :root{
     --twitterBlue: #1FA2F1;
     --buttonHoverBackground: #D4EDFF;
+    --logoutReddishColor: #d84d4d;
 
 }
 
@@ -37,6 +38,15 @@ nav a.twitterBird{
     color: var(--twitterBlue)
 }
 
+nav a.logout{
+    color:#d84d4d;
+}
+
+nav a.logout:hover{
+    color: #d84d4d;
+    background-color: #f5e0e0;
+}
+
 nav a:hover{
     background-color: var(--buttonHoverBackground);
     color: var(--twitterBlue);
@@ -44,5 +54,5 @@ nav a:hover{
 }
 
 .mainSectionContainer {
-    background-color: violet;
+    background-color: white;
 }
