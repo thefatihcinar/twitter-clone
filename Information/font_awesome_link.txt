@@ -1,0 +1,5 @@
+// PUG
+script(src='https://kit.fontawesome.com/03935a78a1.js' crossorigin='anonymous')
+
+//HTML
+<script src="https://kit.fontawesome.com/03935a78a1.js" crossorigin="anonymous"></script>
