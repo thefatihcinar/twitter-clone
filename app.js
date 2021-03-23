@@ -56,7 +56,7 @@ const server = app.listen(PORT, () => {
 app.get("/", middleware.requireLogin, (request, response, next) => {
 
     var payload = {
-        pageTitle: "Twitter Clone",
+        pageTitle: "Home",
         pageHeading : "Welcome to Twitter, a Connected World",
         pageDescription : "This is where the World talks to each other.",
         userLoggedIn: request.session.user

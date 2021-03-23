@@ -2,6 +2,9 @@
     --twitterBlue: #1FA2F1;
     --buttonHoverBackground: #D4EDFF;
     --logoutReddishColor: #d84d4d;
+    --lightGray: rgb(230, 236, 240);
+    --lightGrayBorder: 2px solid var(--lightGray);
+    --spacing: 15px;
 
 }
 
@@ -55,4 +58,30 @@ nav a:hover{
 
 .mainSectionContainer {
     background-color: white;
+    padding: 0;
+    border-left: var(--lightGrayBorder);
+    border-right: var(--lightGrayBorder);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.titleContainer{
+    height: 53px;
+    padding: 0 var(--spacing);
+    display: flex;
+    align-items: center;
+    border-bottom: var(--lightGrayBorder);
+    flex-shrink: 0;
+
+}
+
+.titleContainer h1{
+    flex: 1;
+}
+
+h1{
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
 }
