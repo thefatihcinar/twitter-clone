@@ -34,6 +34,7 @@ app.use(session({
 // For different pages (routes), i will use these routers
 const loginRoute = require('./routes/loginRoutes'); // get the router
 const registerRoute = require('./routes/registerRoutes'); // get the router
+const logoutRoute = require("./routes/logoutRoutes"); // get the router
 
 // Use Body Parser
 // to parse elements in Request Form
@@ -45,7 +46,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // Use this router
 app.use("/login", loginRoute);
 app.use("/register", registerRoute);
-
+app.use("/logout", logoutRoute);
 
 
 const server = app.listen(PORT, () => {
