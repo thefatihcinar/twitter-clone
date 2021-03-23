@@ -7,7 +7,7 @@ const app = express();
 
 const middleware = require("./middleware");
 
-const PORT = 3003;
+const PORT = 8888;
 
 const mongoose = require("./database");
 
@@ -49,7 +49,7 @@ app.use("/register", registerRoute);
 app.use("/logout", logoutRoute);
 
 
-const server = app.listen(PORT, () => {
+const server = app.listen(process.env.PORT || PORT , () => {
     console.log("Server is working on PORT " + PORT);
 });
 
