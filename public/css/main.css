@@ -103,3 +103,15 @@ h1{
     border-radius: 50%;
     background-color: 
 }
+
+.textareaContainer{
+    flex: 1;
+    padding: 0px var(--spacing);
+}
+
+.textareaContainer textarea{
+    width: 100%;
+    border: none;
+    resize: none;
+    font-size: 20px;
+}
