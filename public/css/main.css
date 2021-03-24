@@ -9,6 +9,10 @@
     --buttonDisabledColor: #9BD1F9;
 }
 
+* {
+    outline: none !important;
+}
+
 a{
     color:inherit;
 }
