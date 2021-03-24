@@ -5,7 +5,7 @@
     --lightGray: rgb(230, 236, 240);
     --lightGrayBorder: 2px solid var(--lightGray);
     --spacing: 15px;
-
+    --postFormBoder : 7px solid var(--lightGray);
 }
 
 a{
@@ -84,4 +84,11 @@ h1{
     font-size: 19px;
     font-weight: 800;
     margin: 0;
+}
+
+.postFormContainer{
+    display: flex;
+    padding: var(--spacing);
+    border-bottom: var(--postFormBoder);
+    flex-shrink: 0;
 }
