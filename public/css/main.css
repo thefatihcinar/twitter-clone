@@ -115,3 +115,12 @@ h1{
     resize: none;
     font-size: 20px;
 }
+
+#tweetButton{
+    background-color: var(--twitterBlue);
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 7px 15px;
+}
