@@ -25,9 +25,14 @@ const router = express.Router();
 
 router.post("/", (request, response, next) => {
 
-    console.log("TWEETS API WORK:):):):)");
-    return response.status(200).send("TWEETS API WORK:):):):)");
+    // Send BAD REQUEST if the data is invalid
+    if(!request.body.content){
+        // Tweet is missing somehow
+        console.error("content parameter not sent with request");
+        return response.sendStatus(400);
+    }
 
+    return response.status(200).send("TWEETS API WORK:):):):)");
 });
 
 
