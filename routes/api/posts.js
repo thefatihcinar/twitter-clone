@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 // SCHEMAS
 const User = require("../../schemas/UserSchema");
 // in order to access User collections (table)
+const Post = require("../../schemas/PostSchema");
+// in order to access Post collections (table)
 
 const router = express.Router();
 
@@ -32,7 +34,33 @@ router.post("/", (request, response, next) => {
         return response.sendStatus(400);
     }
 
-    return response.status(200).send("TWEETS API WORK:):):):)");
+    // i.e. data post
+    let tweet = {
+        content: request.body.content,
+        postedBy: request.session.user,
+        pinned: false
+    };
+
+    // Create new tweet
+    Post.create(tweet)
+    .then(async (newTweet) => {
+        // Forward this new post (tweet) to the client
+        // why?
+        // it will render it 
+        
+        // We would like to add information about the user
+        // in response, so get the info from User collection
+        newTweet = await User.populate(newTweet, { path: "postedBy"});
+        response.status(201).send(newTweet);
+        // 201 : CREATED
+    })
+    .catch( (error) => {
+        console.error("error");
+        console.error("tweet not added to the db");
+        return response.sendStatus(400); // BAD REQUEST
+    })
+
+    
 });
 
 
