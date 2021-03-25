@@ -51,6 +51,9 @@ router.post("/", (request, response, next) => {
         // We would like to add information about the user
         // in response, so get the info from User collection
         newTweet = await User.populate(newTweet, { path: "postedBy"});
+
+        newTweet.postedBy.password = ""; // forget the password
+        
         response.status(201).send(newTweet);
         // 201 : CREATED
     })
