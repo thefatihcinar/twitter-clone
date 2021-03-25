@@ -33,3 +33,20 @@ $("#tweetTextarea").keyup((event) => {
     return;
 
 })
+
+// Listening to the Tweet Button
+$("#tweetButton").click((event) => {
+
+    let theButton = $(event.target);
+
+    // GET THE TEXT WHEN CLICKED
+
+    let textarea = $("#tweetTextarea");
+    let tweet = textarea.val().trim();
+
+    // The tweet (i.e. data) for sending to the server
+    let data = {
+        content : tweet
+    }
+
+})
