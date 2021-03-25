@@ -35,6 +35,10 @@ app.use(session({
 const loginRoute = require('./routes/loginRoutes'); // get the router
 const registerRoute = require('./routes/registerRoutes'); // get the router
 const logoutRoute = require("./routes/logoutRoutes"); // get the router
+// APIs
+const postsAPIRoute = require("./routes/api/posts"); // get the router for api
+
+
 
 // Use Body Parser
 // to parse elements in Request Form
@@ -48,6 +52,8 @@ app.use("/login", loginRoute);
 app.use("/register", registerRoute);
 app.use("/logout", logoutRoute);
 
+// Using API Routers
+app.use("/api/posts", postsAPIRoute);
 
 const server = app.listen(process.env.PORT || PORT , () => {
     console.log("Server is working on PORT " + PORT);
