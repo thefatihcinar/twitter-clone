@@ -49,4 +49,9 @@ $("#tweetButton").click((event) => {
         content : tweet
     }
 
+    // When clicked, SEND AN AJAX REQUEST TO THE SERVER
+    $.post("/api/posts", data, (postData, status, xhr) => {
+        
+    })
+
 })
