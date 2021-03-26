@@ -165,3 +165,8 @@ h1{
 .date {
     color: var(--grayText);
 }
+
+.verificationBadge{
+    margin-bottom:3px;
+    width:17px;
+}
