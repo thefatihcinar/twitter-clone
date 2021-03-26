@@ -23,7 +23,28 @@ const router = express.Router();
 // BECAUSE THIS ROUTER / SERVER DOES NOT SERVE HTML PAGE
 
 
-//router.get("/", );
+router.get("/", (request, response,next) => {
+    /*
+        This API, fetches all the tweets that are gonna be shown 
+        to the user
+        All the logic, followers, not-followers etc. will
+        be implemented here.
+    */
+   /*
+        All the tweet-fetching idea will be here!
+   */
+
+    Post.find()
+    .then((tweets) => {
+
+        return response.status(200).send(tweets);
+
+    })
+    .catch((error) => {
+        console.error(error);
+        return console.error("an error occurred while fetching tweets");
+    })
+});
 
 router.post("/", (request, response, next) => {
 
