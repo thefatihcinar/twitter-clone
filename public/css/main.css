@@ -208,3 +208,8 @@ button{
 .header a:hover{
     text-decoration: underline;
 }
+
+.header a,
+.header span{
+    padding-right:0px;
+}
