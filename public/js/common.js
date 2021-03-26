@@ -85,7 +85,10 @@ function createTweetHTML(tweet){
                     </div>
                     <div class = 'postContentContainer'>
                         <div class = 'header'>
-                        
+                            <a href = '/profile/${postedBy.username}'>${postedBy.name}</a>
+                            <span class = 'username'>@${postedBy.username}</span>
+                            <span class = 'middle-point'>·</span>
+                            <span class = 'date'>${postedBy.createdAt}</span>
                         </div>
                         <div class = 'postBody'>
                             <span>${tweet.content}</span>
