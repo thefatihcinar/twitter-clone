@@ -134,3 +134,12 @@ h1{
 #tweetButton:disabled {
     background-color: var(--buttonDisabledColor);
 }
+
+.post {
+    display:flex;
+    flex-direction: column;
+    padding: var(--spacing);
+    cursor: pointer;
+    border-bottom: var(--lightGrayBorder);
+    flex-shrink: 0;
+}
