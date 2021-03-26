@@ -77,6 +77,24 @@ function createTweetHTML(tweet){
 
     let postedBy = tweet.postedBy;
 
+    // TWO TYPES OF RENDERING
+    // 1. Verified Accounts
+    // 2. Not Verified Accounts
+
+    const isVerified = postedBy.verifiedAccount;
+
+    // Source for verification icon
+    let verificationSource = ""; // empty initially
+
+    if(isVerified){
+        // If this account is verified
+        verificationSource = '/images/icons/verifiedAccount.png'
+    }
+    else{
+        // If not verified, or null
+        verificationSource = "";
+    }
+
     return `<div class = 'post'>
 
                 <div class = 'mainContentContainer'>
@@ -86,6 +104,7 @@ function createTweetHTML(tweet){
                     <div class = 'postContentContainer'>
                         <div class = 'header'>
                             <a href = '/profile/${postedBy.username}' class = 'displayName'>${postedBy.name}</a>
+                            <img src = '${verificationSource}' class = 'verificationBadge'> </img>
                             <span class = 'username'>@${postedBy.username}</span>
                             <span class = 'middle-point'>·</span>
                             <span class = 'date'>${postedBy.createdAt}</span>
