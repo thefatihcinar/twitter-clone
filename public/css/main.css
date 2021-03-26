@@ -8,6 +8,7 @@
     --postFormBoder : 7px solid var(--lightGray);
     --buttonDisabledColor: #9BD1F9;
     --grayText: rgb(92 102 111);
+    --grayButton: rgba(0,0,0,0.38);
 }
 
 * {
@@ -181,4 +182,25 @@ h1{
     flex:1;
     display:flex;
     width: 45%;
+}
+
+
+.postFooter .postButtonContainer{
+    flex: 1;
+    display:flex;
+
+}
+
+.postFooter .postButtonContainer button{
+    margin-top: 8px;
+    font-size: 19px;
+}
+
+
+
+button{
+    background-color: white;
+    border:none;
+    color: var(--grayButton);
+    
 }
