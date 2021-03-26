@@ -7,6 +7,7 @@
     --spacing: 15px;
     --postFormBoder : 7px solid var(--lightGray);
     --buttonDisabledColor: #9BD1F9;
+    --grayText: rgb(92 102 111);
 }
 
 * {
@@ -158,4 +159,9 @@ h1{
 
 .displayName{
     font-weight: bold;
+}
+
+.username,
+.date {
+    color: var(--grayText);
 }
