@@ -36,6 +36,7 @@ router.get("/", (request, response,next) => {
 
     Post.find()
     .populate("postedBy")
+    .sort({"createdAt": -1}) // sort in descending manner, newest first
     .then((tweets) => {
 
         return response.status(200).send(tweets);
