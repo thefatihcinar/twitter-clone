@@ -70,6 +70,33 @@ $("#tweetButton").click((event) => {
 })
 
 function createTweetHTML(tweet){
+    /*
+        This function will create HTML code for this tweet
+        i.e. Render this tweet
+    */
+
+    let postedBy = tweet.postedBy;
+
+    return `<div class = 'post'>
+
+                <div class = 'mainContentContainer'>
+                    <div class = 'userImageContainer'>
+                        <img src = '${postedBy.profilePicture}'>
+                    </div>
+                    <div class = 'postContentContainer'>
+                        <div class = 'header'>
+                        
+                        </div>
+                        <div class = 'postBody'>
+                            <span>${tweet.content}</span>
+                        </div>
+                        <div class = 'postFooter'>
+                        
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>`;
     
     return tweet.content;
 }
