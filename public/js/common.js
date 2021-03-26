@@ -77,6 +77,10 @@ function createTweetHTML(tweet){
 
     let postedBy = tweet.postedBy;
 
+    let timestamp = timeDifference(new Date(), new Date(tweet.createdAt));
+    // ... hours ago, ... minutes ago like this
+    // add this to rendering
+
     // TWO TYPES OF RENDERING
     // 1. Verified Accounts
     // 2. Not Verified Accounts
@@ -107,7 +111,7 @@ function createTweetHTML(tweet){
                             <img src = '${verificationSource}' class = 'verificationBadge'> </img>
                             <span class = 'username'>@${postedBy.username}</span>
                             <span class = 'middle-point'>·</span>
-                            <span class = 'date'>${postedBy.createdAt}</span>
+                            <span class = 'date'>${timestamp}</span>
                         </div>
                         <div class = 'postBody'>
                             <span>${tweet.content}</span>
