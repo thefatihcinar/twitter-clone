@@ -170,3 +170,8 @@ h1{
     margin-bottom:3px;
     width:17px;
 }
+
+.postBody{
+    font-size: 18px;
+    font-family: "Helvetica";
+}
