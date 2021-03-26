@@ -35,6 +35,7 @@ router.get("/", (request, response,next) => {
    */
 
     Post.find()
+    .populate("postedBy")
     .then((tweets) => {
 
         return response.status(200).send(tweets);
