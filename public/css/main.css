@@ -172,6 +172,7 @@ h1{
 }
 
 .postBody{
+    margin-top: 3px;
     font-size: 19px;
     font-family: "Helvetica";
 }
