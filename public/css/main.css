@@ -143,3 +143,9 @@ h1{
     border-bottom: var(--lightGrayBorder);
     flex-shrink: 0;
 }
+
+.mainContentContainer {
+    flex: 1;
+    display:flex;
+}
+
