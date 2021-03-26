@@ -149,3 +149,9 @@ h1{
     display:flex;
 }
 
+.postContentContainer {
+    padding-left: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
