@@ -204,3 +204,7 @@ button{
     color: var(--grayButton);
     
 }
+
+.header a:hover{
+    text-decoration: underline;
+}
