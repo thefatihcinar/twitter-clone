@@ -42,7 +42,8 @@ router.get("/", (request, response,next) => {
     })
     .catch((error) => {
         console.error(error);
-        return console.error("an error occurred while fetching tweets");
+        console.error("an error occurred while fetching tweets");
+        return response.status(400);
     })
 });
 
