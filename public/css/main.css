@@ -213,3 +213,15 @@ button{
 .header span{
     padding-right:0px;
 }
+
+.postFooter .postButtonContainer button{
+
+}
+
+.postButtonContainer button:hover{
+    background-color: #d4edff;
+    color: var(--twitterBlue);
+    border: 3px dashed #d4edff;
+    border-radius: 50%;
+    position: fixed;
+}
