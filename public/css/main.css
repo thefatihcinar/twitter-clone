@@ -176,3 +176,9 @@ h1{
     font-size: 19px;
     font-family: "Helvetica";
 }
+
+.postFooter{
+    flex:1;
+    display:flex;
+    width: 45%;
+}
