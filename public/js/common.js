@@ -50,9 +50,26 @@ $("#tweetButton").click((event) => {
     }
 
     // When clicked, SEND AN AJAX REQUEST TO THE SERVER
-    $.post("/api/posts", data, (postData, status, xhr) => {
+    $.post("/api/posts", data, (postTweet, status, xhr) => {
+        // After the api respons to the add tweet
+        // it will send post-tweet here
         
+        let htmlCode = createTweetHTML(postTweet);
+        // create html code for embedding the tweet
         
+        $(".postsContainer").prepend(htmlCode);
+        // add this html code to the posts container
+
+        textarea.val("");
+        // forget about the tweet in the tweet area
+
+        theButton.prop("disabled", true);
+        // disable the tweet button
     })
 
 })
+
+function createTweetHTML(tweet){
+    
+    return tweet.content;
+}
