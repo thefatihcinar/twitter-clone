@@ -3,6 +3,6 @@ mixin createPostForm(userLoggedIn)
         .userImageContainer 
             img(src = userLoggedIn.profilePicture , alt = "User's profile picture")
         .textareaContainer 
-            textarea#tweetTextarea(placeholder = "What's happening?")
+            textarea#tweetTextarea(placeholder = "What's happening?", spellcheck = "false")
             .buttonsContainer 
                 button#tweetButton(disabled = "") Tweet
