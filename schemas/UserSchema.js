@@ -14,7 +14,8 @@ const UserSchema = new Schema({
     username:{ type:String, required: true, trim:true, unique: true},
     email: {type: String, required: true, trim:true, unique: true},
     password:{type:String, required: true},
-    profilePicture:{type:String, default: "/images/defaultProfilePicture.png"}
+    profilePicture:{type:String, default: "/images/defaultProfilePicture.png"},
+    verifiedAccount: {type:Boolean, default: false}
 }, { timestamps: true }); 
 
 var User = mongoose.model("User", UserSchema);
