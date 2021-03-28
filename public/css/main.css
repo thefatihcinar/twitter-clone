@@ -223,5 +223,5 @@ button{
     color: var(--twitterBlue);
     border: 3px dashed #d4edff;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
 }
