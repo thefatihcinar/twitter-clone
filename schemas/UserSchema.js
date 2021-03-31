@@ -15,7 +15,8 @@ const UserSchema = new Schema({
     email: {type: String, required: true, trim:true, unique: true},
     password:{type:String, required: true},
     profilePicture:{type:String, default: "/images/defaultProfilePicture.png"},
-    verifiedAccount: {type:Boolean, default: false}
+    verifiedAccount: {type:Boolean, default: false},
+    likes:[{type:Schema.Types.ObjectId, ref: "Post"}]
 }, { timestamps: true }); 
 
 var User = mongoose.model("User", UserSchema);
