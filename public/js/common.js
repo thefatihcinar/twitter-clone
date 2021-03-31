@@ -128,7 +128,7 @@ function createTweetHTML(tweet){
                                 </button>
                             </div>
                             <div class = 'postButtonContainer'>
-                                <button>
+                                <button class = "likeButton">
                                     <i class='far fa-heart'></i>
                                 </button>
                             </div>
