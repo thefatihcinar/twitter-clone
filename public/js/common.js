@@ -75,7 +75,10 @@ $(document).on("click", ".likeButton", () => {
         this jQuery code listenes to the all like buttons on the page
     */
 
-    alert("clicked to a like button");
+    let heartButton = $(event.target); // which like button is pressed ?
+    let tweetID = getTweetIDFromElement(heartButton);
+
+    console.log(tweetID);
     
 })
 
@@ -148,5 +151,36 @@ function createTweetHTML(tweet){
                 </div>
             </div>`;
     
-    
+}
+
+function getTweetIDFromElement(element){
+    /*
+        this function will return the id of the tweet
+        from an element
+        will be used for retweet buttons, like buttons, click to a post
+    */
+
+    // If the clicked element is THE ROOT ELEMENT
+    const isThisRootElement = element.hasClass("post"); 
+    // if this element has the class post, this is the root element
+
+    // get the root element, because only it has the tweet id data
+    let rootElement = null;
+    if(isThisRootElement){
+        rootElement = element; // root element is this element
+    }
+    else{
+        // root element is the closest element that has class post
+        rootElement = element.closest(".post");
+    }
+
+    let tweetID = rootElement.data().id;
+
+    if(tweetID === undefined){
+        // if it does not have a tweet id
+        alert("tweet id undefined");
+    }
+
+    return tweetID;
+
 }
