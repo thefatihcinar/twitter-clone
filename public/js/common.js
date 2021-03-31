@@ -109,7 +109,7 @@ function createTweetHTML(tweet){
         verificationSource = "";
     }
 
-    return `<div class = 'post'>
+    return `<div class = 'post' data-id = '${tweet._id}'>
 
                 <div class = 'mainContentContainer'>
                     <div class = 'userImageContainer'>
@@ -148,5 +148,5 @@ function createTweetHTML(tweet){
                 </div>
             </div>`;
     
-    return tweet.content;
+    
 }
