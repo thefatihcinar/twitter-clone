@@ -69,6 +69,16 @@ $("#tweetButton").click((event) => {
 
 })
 
+// Listening to the Like BUttons
+$(document).on("click", ".likeButton", () => {
+    /*
+        this jQuery code listenes to the all like buttons on the page
+    */
+
+    alert("clicked to a like button");
+    
+})
+
 function createTweetHTML(tweet){
     /*
         This function will create HTML code for this tweet
