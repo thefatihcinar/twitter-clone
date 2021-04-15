@@ -91,10 +91,14 @@ router.post("/", (request, response, next) => {
 });
 
 
-router.put("/", async (request, response, next) => {
+router.put("/:id/like", async (request, response, next) => {
     /*
         This API will handle PUT Requests to the Posts API
+        It will specifically handle LIKES IN POSTS
     */
+
+    
+    console.log(request.params.id);
 
     response.status(200).send("put request processed by the api");
 })
