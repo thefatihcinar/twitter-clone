@@ -88,7 +88,7 @@ $(document).on("click", ".likeButton", () => {
     */
 
     $.ajax({
-        url: "api/posts",
+        url: `api/posts/${tweetID}/like`,
         type: "PUT",
         success: (postData) => {
 
