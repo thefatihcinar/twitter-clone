@@ -140,11 +140,13 @@ router.put("/:id/like", async (request, response, next) => {
         and then UPDATE SESSION
     */
     
+    // TWEET SIDE - Insert the like
+    let tweet = await Post.findByIdAndUpdate(tweetID, {[option]: {likes: userID}} , {new: true})
+    .catch((error) => {
+        console.log("an error occured while inserting the like to the db");
+        response.status(400);
+    });
 
-
-    console.log( tweetID + "Is liked : " + isLiked);
-    console.log("option " + option);
-    console.log("user " + userID);
 
     response.status(200).send("put request processed by the api");
 })
