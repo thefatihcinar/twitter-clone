@@ -205,6 +205,13 @@ button{
     
 }
 
+button i,
+button span {
+    pointer-events: none;
+    /* click must happen at button, not at i tag */
+}
+
+
 .header a:hover{
     text-decoration: underline;
 }
