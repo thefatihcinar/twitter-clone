@@ -97,8 +97,14 @@ router.put("/:id/like", async (request, response, next) => {
         It will specifically handle LIKES IN POSTS
     */
 
+    // GET POST ID
+    // Which tweet is this one?
+    let tweetID = request.params.id;
+
+    // GET USER ID
+    // Who wants to like this tweet?
+    let userID = request.session.user._id;
     
-    console.log(request.params.id);
 
     response.status(200).send("put request processed by the api");
 })
