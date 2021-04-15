@@ -92,7 +92,10 @@ $(document).on("click", ".likeButton", () => {
         type: "PUT",
         success: (postData) => {
 
-            console.log("made put request to the server");
+            // Update The Button to Show New Number of Likes
+            heartButton.find("span").text(postData.likes.length || "");
+            // if there is no like, do not display any text, such as text 0.
+            
 
         }
     })
@@ -160,6 +163,7 @@ function createTweetHTML(tweet){
                             <div class = 'postButtonContainer'>
                                 <button class = "likeButton">
                                     <i class='far fa-heart'></i>
+                                    <span>${tweet.likes.length || ""}</span>
                                 </button>
                             </div>
                         </div>
