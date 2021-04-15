@@ -147,8 +147,15 @@ router.put("/:id/like", async (request, response, next) => {
         response.status(400);
     });
 
+    
+    /* RETURN THIS POST NOW */
+    // but new version
+    response.status(200).send(tweet);
+    // front-end will deal with this 
 
-    response.status(200).send("put request processed by the api");
+    // Why 200? Why not 201?
+    // because we are not adding new resource
+    // just updating
 })
 
 
