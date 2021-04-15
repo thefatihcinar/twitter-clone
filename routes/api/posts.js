@@ -105,6 +105,17 @@ router.put("/:id/like", async (request, response, next) => {
     // Who wants to like this tweet?
     let userID = request.session.user._id;
     
+    // Figure Out: Whether this user has already liked this tweet or not
+    let isLiked = request.session.user.likes && request.session.user.likes.includes(tweetID);
+    /*
+        checking whether the user HAS EVER LIKED ANY POST
+        If the user has not liked any post, this tweet could not be liked
+        Why check this? 
+        To avoid reading null
+        And we could have check tweet.likes but user.likes is easier.
+    */
+
+    console.log( tweetID + "Is liked : " + isLiked);
 
     response.status(200).send("put request processed by the api");
 })
