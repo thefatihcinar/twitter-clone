@@ -114,8 +114,37 @@ router.put("/:id/like", async (request, response, next) => {
         To avoid reading null
         And we could have check tweet.likes but user.likes is easier.
     */
+    /*
+        based on isLiked situation, the API must decide whether
+        to ADD_TO_SET or PULL_FROM_THE_SET
+        i.e. add this like or remove this like
+    */
+
+    let option = isLiked ? "$pull" : "$addToSet";
+    // if it is liked by this user, remove the like
+    // if not liked by this user, add the like
+
+    // USER SIDE - Insert the like
+    request.session.user = 
+        await User.findByIdAndUpdate(userID, {[option]: { likes: tweetID}}, {new: true})
+        .catch( (error) => {
+            console.log("an error occured while inserting like to the db");
+            console.log(error);
+            response.sendStatus(400);
+        });
+    /*
+        SUPER IMPORTANT
+        Session has OLD INFORMATION about user's likes. 
+        It will not reflect liking operation recently.
+        That is why we want new information from MongoDB about user
+        and then UPDATE SESSION
+    */
+    
+
 
     console.log( tweetID + "Is liked : " + isLiked);
+    console.log("option " + option);
+    console.log("user " + userID);
 
     response.status(200).send("put request processed by the api");
 })
