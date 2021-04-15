@@ -69,7 +69,7 @@ $("#tweetButton").click((event) => {
 
 })
 
-// Listening to the Like BUttons
+// Listening to the Like Buttons
 $(document).on("click", ".likeButton", () => {
     /*
         this jQuery code listenes to the all like buttons on the page
@@ -78,7 +78,24 @@ $(document).on("click", ".likeButton", () => {
     let heartButton = $(event.target); // which like button is pressed ?
     let tweetID = getTweetIDFromElement(heartButton);
 
-    console.log(tweetID);
+    if(tweetID === undefined) return;
+    
+    /*
+        What will happen when like button clicked?
+        Client will make a HTTP PUT REQUEST to the API
+        and API will decide whether this user has liked 
+        this post before or not
+    */
+
+    $.ajax({
+        url: "api/posts",
+        type: "PUT",
+        success: (postData) => {
+
+            console.log("made put request to the server");
+
+        }
+    })
     
 })
 
