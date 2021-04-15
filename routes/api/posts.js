@@ -91,5 +91,14 @@ router.post("/", (request, response, next) => {
 });
 
 
+router.put("/", async (request, response, next) => {
+    /*
+        This API will handle PUT Requests to the Posts API
+    */
+
+    response.status(200).send("put request processed by the api");
+})
+
+
 // Export this router object
 module.exports = router;
