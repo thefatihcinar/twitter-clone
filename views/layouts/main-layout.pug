@@ -10,7 +10,10 @@ html(lang="en")
         link(rel='icon' href='https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png')
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', integrity='sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh', crossorigin='anonymous')
         link(rel="stylesheet", href="/css/main.css")
-    body 
+    body
+        script.
+            var userLoggedIn = !{userLoggedInJS};
+            // Now we can reach this user in javascript
         .wrapper 
             .row 
                 nav.col-2
