@@ -61,11 +61,17 @@ const server = app.listen(process.env.PORT || PORT , () => {
 
 app.get("/", middleware.requireLogin, (request, response, next) => {
 
+    /*
+        we have to pass user information to client as well
+        client must know this user in order to RENDER
+        because we use client side rendering
+    */
     var payload = {
         pageTitle: "Home",
         pageHeading : "Welcome to Twitter, a Connected World",
         pageDescription : "This is where the World talks to each other.",
-        userLoggedIn: request.session.user
+        userLoggedIn: request.session.user, // this is for PUG, we need user logged in in JS
+        userLoggedInJS: JSON.stringify(request.session.user) // push it to the js
     };
     
     const OKAY = 200;
