@@ -161,6 +161,29 @@ function createTweetHTML(tweet){
         verificationSource = "";
     }
 
+    /* 
+        PROBLEM: Whenever the page loads, like and retweets buttons disappers
+        we need to remember whether this user has liked this post or not before
+        so get this information first
+    */
+
+    let likeButtonActiveClass = 
+                tweet.likes.includes(userLoggedIn._id) ? "active" : "";
+    /* NOW WE KNOW, inject this to html now */
+    
+    // Also render heart icons based on activity.
+    let heartIconClass = "";
+    if(likeButtonActiveClass){
+        // if this user has liked the tweet
+        // render full heart icon 
+        heartIconClass = "fas fa-heart";
+    }
+    else{
+        // if this user HAS NOT LIKED the tweet
+        // render empty heart icon
+        heartIconClass = "far fa-heart";
+    }
+
     return `<div class = 'post' data-id = '${tweet._id}'>
 
                 <div class = 'mainContentContainer'>
@@ -190,8 +213,8 @@ function createTweetHTML(tweet){
                                 </button>
                             </div>
                             <div class = 'postButtonContainer red'>
-                                <button class = "likeButton">
-                                    <i class='far fa-heart'></i>
+                                <button class = "likeButton ${likeButtonActiveClass}">
+                                    <i class='${heartIconClass}'></i>
                                     <span>${tweet.likes.length || ""}</span>
                                 </button>
                             </div>
