@@ -189,7 +189,7 @@ function createTweetHTML(tweet){
                                     <i class='far fa-retweet'></i>
                                 </button>
                             </div>
-                            <div class = 'postButtonContainer'>
+                            <div class = 'postButtonContainer red'>
                                 <button class = "likeButton">
                                     <i class='far fa-heart'></i>
                                     <span>${tweet.likes.length || ""}</span>
