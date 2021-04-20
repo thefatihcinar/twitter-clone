@@ -9,6 +9,7 @@
     --buttonDisabledColor: #9BD1F9;
     --grayText: rgb(92 102 111);
     --grayButton: rgba(0,0,0,0.38);
+    --likeRed: rgb(226,34,94);
 }
 
 * {
@@ -231,4 +232,8 @@ button span {
     border: 3px dashed #d4edff;
     border-radius: 50%;
     position: absolute;
+}
+
+.postButtonContainer.red button.active{
+    color: var(--likeRed);
 }
