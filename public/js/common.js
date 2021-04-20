@@ -95,8 +95,37 @@ $(document).on("click", ".likeButton", () => {
             // Update The Button to Show New Number of Likes
             heartButton.find("span").text(postData.likes.length || "");
             // if there is no like, do not display any text, such as text 0.
-            
 
+            let imageInsideHeartButton = heartButton.find("i");
+            // Find image in like button, in order to change it when like is pressed
+            
+            /* Changing button color when Like Button is Pressed */
+
+            // Check whether this user has liked this post or not
+            let hasThisUserLikedThisPost = postData.likes.includes(userLoggedIn._id);
+
+            if(hasThisUserLikedThisPost){
+                // make the like button ACTIVE
+                heartButton.addClass("active");
+
+                // Remove class of image inside heart button
+                imageInsideHeartButton.removeClass();
+                // And RENDER FULL HEART ICON
+                imageInsideHeartButton.addClass("fas");
+                imageInsideHeartButton.addClass("fa-heart");
+                
+            }
+            else{
+                // make the like button DE-ACTIVE
+                heartButton.removeClass("active");
+
+                // Remove FULL HEART ICON from the image inside heart button
+                imageInsideHeartButton.removeClass();
+                // And RENDER EMPTY HEART ICON
+                imageInsideHeartButton.addClass("far");
+                imageInsideHeartButton.addClass("fa-heart");
+                
+            }
         }
     })
     
